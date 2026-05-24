@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.311);
+  backdrop-filter: blur(50px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logoText {
+  font-family: serif;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  font-size: 1.8em;
+  font-weight: bold;
+  letter-spacing: 0.3em;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: serif;
+}
+
+nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 1s ease;
+}
+
+.link:hover {
+  color: #e5c762;
+}
+
+.headerLogo {
+  height: 5rem;
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.headerLogo:hover {
+  transform: scale(1.15);
+}
