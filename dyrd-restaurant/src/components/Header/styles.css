@@ -7,47 +7,30 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 4rem;
+  padding: 1.8rem 4rem;
   z-index: 1000;
+
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0);
+
+  transition:
+    background-color 1s ease,
+    backdrop-filter 1.5s ease,
+    border-color 1s ease,
+    padding 1s ease;
 }
 
-.logoText {
-  font-family: "Times New Roman", serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-  letter-spacing: 0.15em;
-  color: #ffffff;
-  text-transform: uppercase;
-  white-space: nowrap;
+.header.scrolled {
+  background-color: rgba(0, 0, 0, 0.238);
+  backdrop-filter: blur(20px);
 }
 
 .logoLink {
   display: flex;
   align-items: center;
-  font-size: 1.8em;
-  font-weight: bold;
-  letter-spacing: 0.3em;
-  color: #ffffff;
+  gap: 1.2rem;
   text-decoration: none;
-  font-family: serif;
-}
-
-nav {
-  display: flex;
-  gap: 2.5rem;
-}
-
-.link {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 1s ease;
-}
-
-.link:hover {
-  color: #e5c762;
 }
 
 .headerLogo {
@@ -58,5 +41,35 @@ nav {
 }
 
 .headerLogo:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
+}
+
+.logoText {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.navMenu {
+  font-family: "Cormorant Garamond", serif;
+  display: flex;
+  gap: 3rem;
+}
+
+.link {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 1s ease;
+}
+
+.link:hover {
+  color: #e5c762;
 }

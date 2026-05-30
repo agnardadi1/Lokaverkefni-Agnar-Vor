@@ -1,0 +1,66 @@
+.main-footer {
+  background-color: #0a0a0a;
+  padding: 4rem 4rem 2rem 4rem;
+  font-family: "Montserrat", sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: #8c8c8c;
+}
+
+.footer-divider {
+  color: rgba(255, 255, 255, 0.15);
+  font-weight: 300;
+}
+
+.highlight-hours {
+  color: #b3b3b3;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.footer-bottom p {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #595959;
+  margin: 0;
+}
+
+.footer-link {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: color 1s ease;
+}
+
+.footer-link:hover {
+  color: #e5c762;
+}
+
+.footer-email {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: color 1s ease;
+}
+
+.footer-email:hover {
+  color: #e5c762;
+}

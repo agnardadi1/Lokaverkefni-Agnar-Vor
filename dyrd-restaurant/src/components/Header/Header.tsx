@@ -1,19 +1,35 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./styles.css";
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="header">
+    <div className={`header ${isScrolled ? "scrolled" : ""}`}>
       <Link className="logoLink" to="/">
         <img
           src="/logo_transparent.png"
-          alt="Dýrð Restaurant Lógó"
+          alt="Dýrð Lógó"
           className="headerLogo"
         />
-
-        <span className="logoText">Dýrð Restaurant</span>
+        <span className="logoText">Dýrð</span>
       </Link>
-      <nav>
+
+      <nav className="navMenu">
         <Link className="link" to="/">
           FORSÍÐA
         </Link>
