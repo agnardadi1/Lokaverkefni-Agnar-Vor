@@ -1,21 +1,24 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.311);
-  backdrop-filter: blur(50px);
-  position: sticky;
-  top: 0;
+  padding: 1.5rem 4rem;
   z-index: 1000;
 }
 
 .logoText {
-  font-family: serif;
-  font-size: 1em;
+  font-family: "Times New Roman", serif;
+  font-size: 1.8rem;
   font-weight: 400;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   color: #ffffff;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .logoLink {
@@ -48,8 +51,9 @@ nav {
 }
 
 .headerLogo {
-  height: 5rem;
-  display: flex;
+  height: 60px;
+  width: auto;
+  display: block;
   transition: transform 1s ease;
 }
 
