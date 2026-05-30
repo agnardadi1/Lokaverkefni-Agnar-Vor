@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import "/src/App.css";
+import "./styles.css";
 
 export default function Home() {
   return (
@@ -50,8 +50,8 @@ export default function Home() {
 
       <section className="experience-section">
         <div className="experience-header">
-          <p className="experience-subtitle">Konseptið</p>
-          <h2 className="experience-title">Hannað fyrir skynfærin</h2>
+          <p className="experience-subtitle"></p>
+          <h2 className="experience-title">Upplifunin</h2>
           <div className="gold-divider"></div>
         </div>
 

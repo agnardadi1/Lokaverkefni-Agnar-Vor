@@ -1,0 +1,95 @@
+.menu-page {
+  background-color: #0a0a0a;
+  min-height: 100vh;
+  padding: 14rem 4rem 6rem 4rem;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.menu-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.menu-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.menu-section-divider {
+  text-align: center;
+  margin: 6rem 0 4rem 0;
+}
+
+.long-gold-line {
+  width: 150px;
+  height: 1px;
+  background-color: rgba(229, 199, 98, 0.2);
+  margin: 2rem auto;
+}
+
+.category-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: #e5c762 !important;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(229, 199, 98, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.menu-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.menu-item {
+  width: 100%;
+}
+
+.menu-item-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.item-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.item-dots {
+  flex-grow: 1;
+  border-bottom: 2px dotted rgba(255, 255, 255, 0.15) !important;
+  margin: 0 1.5rem;
+  align-self: flex-end;
+  margin-bottom: 5px;
+}
+
+.item-price {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: #e5c762 !important;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
