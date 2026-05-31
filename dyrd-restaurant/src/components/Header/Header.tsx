@@ -21,11 +21,7 @@ export default function Header() {
   return (
     <div className={`header ${isScrolled ? "scrolled" : ""}`}>
       <Link className="logoLink" to="/">
-        <img
-          src="/logo_transparent.png"
-          alt="Dýrð Lógó"
-          className="headerLogo"
-        />
+        <img src="/logo_footer.png" alt="Dýrð Lógó" className="headerLogo" />
         <span className="logoText">Dýrð</span>
       </Link>
 

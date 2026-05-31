@@ -41,7 +41,7 @@
 .hero-description {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
-  font-size: 0.95rem;
+  font-size: 1.1em;
   line-height: 1.8;
   letter-spacing: 0.03em;
   color: #cccccc;
@@ -67,7 +67,7 @@
   border-color: #e5c762;
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  transition: all 1s ease;
+  transition: all 1.5s ease;
 }
 
 .intro-section {
@@ -110,7 +110,7 @@
   border: 1px solid #e5c762;
   padding: 1rem 2rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 1.5s ease;
 }
 
 .intro-outline-btn:hover {
