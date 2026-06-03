@@ -32,8 +32,8 @@ export default function About() {
             </p>
             <p className="about-paragraph">
               Hvert einasta smáatriði – frá handvöldu A5 Kobe nautakjöti yfir í
-              fágasta Beluga kavíarinn – er meðhöndlað af ýtrustu virðingu og
-              nákvæmni af matreiðslumönnum okkar.
+              stórbrotna Beluga kavíarinn – er allt meðhöndlað af ýtrustu
+              virðingu og nákvæmni af matreiðslumönnum okkar.
             </p>
           </motion.div>
 
@@ -65,8 +65,8 @@ export default function About() {
             </p>
             <p className="about-paragraph">
               Hér mætast fágun, dramatík og lúxus í formi sem þú upplifir hvergi
-              annars staðar. Hvert borð er sérútbúið lokað svæði þar sem þú og
-              þínir gestir getið átt ógleymanlega stund.
+              annars staðar á Íslandi. Hvert borð er sérútbúið lokað svæði þar
+              sem þú og þínir gestir getið átt ógleymanlega stund.
             </p>
           </motion.div>
 

@@ -197,9 +197,7 @@ export default function Contact() {
             </fMotion.div>
           )}
 
-          <p className="letter-prose">
-            Væntum við þess að fá staðfestingu ykkar fljótlega.
-          </p>
+          <p className="letter-prose">Við hlökkum til að heyra frá ykkur.</p>
 
           <div className="letter-closing-block">
             <p className="letter-prose">Með tilhlökkun og ánægju,</p>
