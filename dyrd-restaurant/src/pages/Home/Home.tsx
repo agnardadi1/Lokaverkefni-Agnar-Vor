@@ -28,9 +28,15 @@ export default function Home() {
             dramatískt andrúmsloft þar sem smáatriðin skapa heildina. Fáðu þér
             sæti og leyfðu þér að njóta.
           </p>
-          <Link to="/matsedill" className="hero-btn">
-            SKOÐA MATSEÐILL
-          </Link>
+          <div className="hero-buttons-group">
+            <Link to="/hafa-samband" className="hero-btn-filled">
+              Panta borð
+            </Link>
+
+            <Link to="/matsedill" className="hero-btn-outline">
+              Skoða matseðil
+            </Link>
+          </div>
         </motion.div>
       </section>
 

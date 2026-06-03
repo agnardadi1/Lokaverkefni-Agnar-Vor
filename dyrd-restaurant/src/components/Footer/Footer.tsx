@@ -2,25 +2,82 @@ import "./styles.css";
 
 export default function Footer() {
   return (
-    <footer className="main-footer">
-      <div className="footer-top">
-        <div className="footer-section contact-info">
-          <span>GEIRSGATA 2, 101 REYKJAVÍK </span>
-          <span className="footer-divider">|</span>
-          <a href="tel:7800070" className="footer-link">
-            780-0070
-          </a>
+    <footer className="footer-container">
+      <div className="footer-grid">
+        <div className="footer-content">
+          <h4
+            style={{
+              color: "#e5c762",
+              margin: "0 0 1rem 0",
+              textTransform: "uppercase",
+              fontSize: "1.2rem",
+            }}
+          >
+            Staðsetning
+          </h4>
+          <p
+            style={{
+              color: "#ffffff",
+              margin: "0 0 0.5rem 0",
+              fontSize: "1rem",
+            }}
+          >
+            Geirsgata 2, 101 Reykjavík
+          </p>
+          <p
+            style={{
+              color: "#ffffff",
+              margin: "0 0 0.5rem 0",
+              fontSize: "1rem",
+            }}
+          >
+            Sími:{" "}
+            <a
+              href="tel:7800070"
+              style={{ color: "#e5c762", textDecoration: "none" }}
+            >
+              780-0070
+            </a>
+          </p>
         </div>
 
-        <div className="footer-section opening-hours">
-          <span>MÁN-FIM: 17:00 - 23:00</span>
-          <span className="footer-divider">|</span>
-          <span className="highlight-hours">FÖS-LAU: 17:00 - 01:00</span>
+        <div className="footer-content">
+          <h4
+            style={{
+              color: "#e5c762",
+              margin: "0 0 1rem 0",
+              textTransform: "uppercase",
+              fontSize: "1.2rem",
+            }}
+          >
+            Opnunartímar
+          </h4>
+          <p
+            style={{
+              color: "#ffffff",
+              margin: "0 0 0.5rem 0",
+              fontSize: "1rem",
+            }}
+          >
+            Mán-Fim: 17:00 - 23:00
+          </p>
+          <p
+            style={{
+              color: "#ffffff",
+              margin: "0 0 0.5rem 0",
+              fontSize: "1rem",
+            }}
+          >
+            Fös-Lau: 17:00 - 01:00
+          </p>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; 2026 DÝRÐ VEITINGASTAÐUR. ALLUR RÉTTUR ÁSKILINN.</p>
+        <p style={{ color: "#8c8c8c", margin: 0, fontSize: "0.8rem" }}>
+          &copy; {new Date().getFullYear()} Dýrð Veitingastaður. Allur réttur
+          áskilinn.
+        </p>
       </div>
     </footer>
   );
