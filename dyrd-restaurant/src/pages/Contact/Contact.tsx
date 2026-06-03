@@ -13,7 +13,7 @@ export default function Contact() {
     e.preventDefault();
 
     if (!name || !email || !subject || !message) {
-      alert("Vinsamlegast fylltu út alla nauðsynlega reiti á skininu.");
+      alert("Vinsamlegast fylltu út alla nauðsynlega reiti á bréfinu!");
       return;
     }
 
