@@ -21,12 +21,12 @@ export default function Home() {
             <span className="hero-title-sub">STUND.</span>
           </h1>
           <p className="hero-description">
-            Dýrð er einstök upplifun þar sem lagt mikil áhersla á upplifunina í
-            heild sinni. Allir réttir eru sérstaklega hannaðir fyrir staðinn af
-            margverðlaunuðum matreiðslumönnum og eru framleiddir úr hágæða
-            hráefnum. Við sameinum framúrstefnulega tækni, fáguð bragðbönd og
-            dramatískt andrúmsloft þar sem smáatriðin skapa heildina. Fáðu þér
-            sæti og leyfðu þér að njóta.
+            Dýrð er einstök upplifun þar sem lagt er mikil áhersla á upplifunina
+            í heild sinni. Allir réttir eru sérstaklega hannaðir fyrir staðinn
+            af margverðlaunuðum matreiðslumönnum og eru framleiddir úr bestu
+            hráefnum sem völ er á. Við sameinum framúrstefnulega tækni, fáguð
+            bragðbönd og dramatískt andrúmsloft þar sem smáatriðin skapa
+            heildina. Fáðu þér sæti og leyfðu þér að njóta.
           </p>
           <div className="hero-buttons-group">
             <Link to="/hafa-samband" className="hero-btn-filled">
@@ -42,7 +42,7 @@ export default function Home() {
 
       <section className="intro-section">
         <div className="intro-content">
-          <h2 className="intro-title">Smáatriðin skapa heildina</h2>
+          <h2 className="intro-title">Smáatriðin fá að njóta sín</h2>
           <p className="intro-text">
             Ekkert á Dýrð er tilviljun. Frá hráefnum og framsetningu til
             lýsingar, þjónustu og hljóðláts andrúmslofts er hvert smáatriði
@@ -73,8 +73,8 @@ export default function Home() {
             </div>
             <h3>Matseðillinn</h3>
             <p>
-              Úthugaður matseðill þar sem hver réttur er listaverk, samsettur úr
-              hágæða hráefnum.
+              Úthugsaður matseðill þar sem hver réttur er listaverk, samsettur
+              úr bestu hráefnum heims.
             </p>
           </div>
 
@@ -89,8 +89,8 @@ export default function Home() {
             </div>
             <h3>Umhverfið</h3>
             <p>
-              Dökkt, lifandi og dramatísk lýsing sem dregur þig inn í heim
-              algjörrar slökunar og fágunar.
+              Dökk, lifandi og dramatísk lýsing sem dregur þig inn í heim
+              fágunar og dýrðar.
             </p>
           </div>
 
