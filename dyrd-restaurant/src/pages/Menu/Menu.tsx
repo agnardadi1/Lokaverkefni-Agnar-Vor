@@ -32,7 +32,7 @@ export default function Menu() {
           price: "18.900 kr",
         },
         {
-          name: "Þurrkuð andarbringa, villisveppatartaletta, rifsberjaryk & dökkt pækilsíróp",
+          name: "Létt þurrkuð andarbringa, villisveppatartaletta, rifsberjaryk & dökkt pækilsíróp",
           price: "16.400 kr",
         },
       ],
