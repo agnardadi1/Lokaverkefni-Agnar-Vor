@@ -206,7 +206,7 @@ export default function Contact() {
           >
             {language === "en"
               ? "Dear culinary enthusiasts at Dýrð,"
-              : "Heil(ir) og sæl(ir) matgæðingar á Dýrð,"}
+              : "Kæru matgæðingar á Dýrð,"}
           </fMotion.p>
 
           <fMotion.p

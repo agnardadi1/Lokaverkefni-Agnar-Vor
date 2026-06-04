@@ -23,7 +23,7 @@ const translations: Record<Language, Record<string, string>> = {
     heroBookBtn: "Panta borð",
     heroMenuBtn: "Skoða matseðil",
 
-    introTitle: "Smáatriðin fá að njóta sín",
+    introTitle: "Kæru matgæðingar á Dýrð,",
     introText:
       "Ekkert á Dýrð er tilviljun. Frá hráefnum og framsetningu til lýsingar, þjónustu og hljóðláts andrúmslofts er hvert smáatriði hluti af stærri upplifun.",
     introBtn: "MEIRA UM DÝRÐ",
@@ -70,7 +70,7 @@ const translations: Record<Language, Record<string, string>> = {
     heroBookBtn: "Book a Table",
     heroMenuBtn: "View Menu",
 
-    introTitle: "Where Details Flourish",
+    introTitle: "Dear food enthusiasts at Dýrð,",
     introText:
       "Nothing at Dýrð is a coincidence. From raw ingredients and presentation to illumination, hospitality, and serene acoustics, every minute detail is an essential piece of a grander experience.",
     introBtn: "MORE ABOUT DÝRÐ",
