@@ -41,6 +41,12 @@
   text-transform: uppercase;
 }
 
+.header-nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
 .header-nav {
   display: flex;
   gap: 3rem;
@@ -58,6 +64,35 @@
 
 .header-nav a:hover {
   color: #e5c762;
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.lang-btn {
+  font-family: "Cormorant Garamond", serif;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+  color: #e5c762;
+}
+
+.lang-divider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
 }
 
 .menu-toggle-btn {
@@ -107,6 +142,12 @@
     background-color: #e5c762;
   }
 
+  .header-nav-wrapper {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
   .header-nav {
     display: none;
     flex-direction: column;
@@ -130,5 +171,18 @@
 
   .header-nav a:last-child {
     border-bottom: none;
+  }
+
+  .lang-selector {
+    font-family: "Cormorant Garamond", serif;
+    display: none;
+    justify-content: center;
+    width: 100%;
+    padding: 1.5rem 0 0.5rem 0;
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.02);
+  }
+
+  .lang-selector.nav-open {
+    display: flex;
   }
 }

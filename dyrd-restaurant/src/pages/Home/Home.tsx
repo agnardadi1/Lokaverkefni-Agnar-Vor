@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext";
 import "./styles.css";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <main className="home-container">
       <section className="hero-section">
@@ -15,26 +18,19 @@ export default function Home() {
             ease: [0.25, 1, 0.5, 1],
           }}
         >
-          <p className="hero-subtitle">Einstök upplifun</p>
+          <p className="hero-subtitle">{t("heroSubtitle")}</p>
           <h1 className="hero-title">
-            ÓGLEYMANLEG <br />
-            <span className="hero-title-sub">STUND.</span>
+            {t("heroTitleMain")} <br />
+            <span className="hero-title-sub">{t("heroTitleSub")}</span>
           </h1>
-          <p className="hero-description">
-            Dýrð er einstök upplifun þar sem lagt er mikil áhersla á upplifunina
-            í heild sinni. Allir réttir eru sérstaklega hannaðir fyrir staðinn
-            af margverðlaunuðum matreiðslumönnum og eru framleiddir úr bestu
-            hráefnum sem völ er á. Við sameinum framúrstefnulega tækni, fáguð
-            bragðbönd og dramatískt andrúmsloft þar sem smáatriðin skapa
-            heildina. Fáðu þér sæti og leyfðu þér að njóta.
-          </p>
+          <p className="hero-description">{t("heroDescription")}</p>
           <div className="hero-buttons-group">
             <Link to="/hafa-samband" className="hero-btn-filled">
-              Panta borð
+              {t("heroBookBtn")}
             </Link>
 
             <Link to="/matsedill" className="hero-btn-outline">
-              Skoða matseðil
+              {t("heroMenuBtn")}
             </Link>
           </div>
         </motion.div>
@@ -42,14 +38,10 @@ export default function Home() {
 
       <section className="intro-section">
         <div className="intro-content">
-          <h2 className="intro-title">Smáatriðin fá að njóta sín</h2>
-          <p className="intro-text">
-            Ekkert á Dýrð er tilviljun. Frá hráefnum og framsetningu til
-            lýsingar, þjónustu og hljóðláts andrúmslofts er hvert smáatriði
-            hluti af stærri upplifun.
-          </p>
+          <h2 className="intro-title">{t("introTitle")}</h2>
+          <p className="intro-text">{t("introText")}</p>
           <Link to="/um-okkur" className="intro-outline-btn">
-            MEIRA UM DÝRÐ
+            {t("introBtn")}
           </Link>
         </div>
       </section>
@@ -57,7 +49,7 @@ export default function Home() {
       <section className="experience-section">
         <div className="experience-header">
           <p className="experience-subtitle"></p>
-          <h2 className="experience-title">Upplifunin</h2>
+          <h2 className="experience-title">{t("expTitle")}</h2>
           <div className="gold-divider"></div>
         </div>
 
@@ -71,11 +63,8 @@ export default function Home() {
                 className="card-image-1"
               />
             </div>
-            <h3>Matseðillinn</h3>
-            <p>
-              Úthugsaður matseðill þar sem hver réttur er listaverk, samsettur
-              úr bestu hráefnum heims.
-            </p>
+            <h3>{t("card1Title")}</h3>
+            <p>{t("card1Desc")}</p>
           </div>
 
           <div className="experience-card">
@@ -87,11 +76,8 @@ export default function Home() {
                 className="card-image-2"
               />
             </div>
-            <h3>Umhverfið</h3>
-            <p>
-              Dökk, lifandi og dramatísk lýsing sem dregur þig inn í heim
-              fágunar og dýrðar.
-            </p>
+            <h3>{t("card2Title")}</h3>
+            <p>{t("card2Desc")}</p>
           </div>
 
           <div className="experience-card">
@@ -103,11 +89,8 @@ export default function Home() {
                 className="card-image-3"
               />
             </div>
-            <h3>Salurinn & Barinn</h3>
-            <p>
-              Vandað vínúrval og nýstárlegir kokteilar hannaðir til að tóna
-              fullkomlega við matinn og dýpri upplifun.
-            </p>
+            <h3>{t("card3Title")}</h3>
+            <p>{t("card3Desc")}</p>
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Lenis from "@studio-freight/lenis";
 
-function App() {
+export default function App() {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1,
@@ -43,5 +43,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
