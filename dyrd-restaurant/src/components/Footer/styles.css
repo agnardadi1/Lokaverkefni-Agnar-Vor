@@ -1,10 +1,11 @@
 .footer-container {
-  background-color: #050505;
-  border-top: 0.0625rem solid rgba(255, 255, 255, 0.02);
+  background-color: var(--bg-color);
+  border-top: 0.0625rem solid var(--border-color);
   padding: 6rem 8% 4rem 8%;
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
+  transition: var(--theme-transition);
 }
 
 .footer-grid {
@@ -23,40 +24,77 @@
   text-align: right;
 }
 
-.footer-content h4 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem;
+.footer-title-gold {
+  color: var(--gold-color);
+  margin: 0 0 1.5rem 0;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.15em;
+  transition: var(--theme-transition);
 }
 
-.footer-content p {
+.footer-text-main {
+  color: var(--text-color);
+  margin: 0 0 0.6rem 0;
+  font-size: 0.95rem;
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
-  font-size: 0.95rem;
   line-height: 1.8;
-  margin: 0 0 0.6rem 0;
   letter-spacing: 0.02em;
+  transition: var(--theme-transition);
 }
 
-.footer-content a {
+.footer-link-gold {
+  color: var(--gold-color);
   text-decoration: none;
+  transition: var(--theme-transition);
+}
+
+.footer-link-gold:hover {
+  color: var(--text-color);
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1.2rem;
+  width: 100%;
+}
+
+.instagram-link {
+  color: var(--text-color);
+  display: inline-block;
+  transition:
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.instagram-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: block;
+}
+
+.instagram-link:hover {
+  color: var(--gold-color);
+  transform: scale(1.08);
 }
 
 .footer-bottom {
   max-width: 75rem;
   margin: 4rem auto 0 auto;
   padding-top: 2rem;
-  border-top: 0.0625rem solid rgba(255, 255, 255, 0.02);
+  border-top: 0.0625rem solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  transition: var(--theme-transition);
 }
 
-.footer-bottom p {
+.footer-copyright {
   font-family: "Cormorant Garamond", serif;
   font-weight: 300;
   font-size: 0.75rem;
@@ -64,6 +102,8 @@
   text-transform: uppercase;
   margin: 0;
   text-align: center;
+  color: var(--text-muted);
+  transition: var(--theme-transition);
 }
 
 @media (max-width: 48rem) {
@@ -91,7 +131,7 @@
     justify-content: center;
   }
 
-  .footer-content p {
+  .footer-text-main {
     font-size: 1.05rem !important;
     line-height: 1.8 !important;
     width: 100%;
@@ -99,8 +139,13 @@
     text-align: center;
   }
 
+  .footer-socials {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
   .footer-bottom {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     flex-direction: column;
     gap: 1.2rem;
     text-align: center;
