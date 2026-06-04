@@ -1,6 +1,48 @@
+:root {
+  --bg-color: #131313;
+  --text-color: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --gold-color: #e5c762;
+  --price-color: #e5c762;
+  --border-color: rgba(255, 255, 255, 0.03);
+  --overlay-color: rgba(10, 10, 10, 0.9);
+  --theme-transition:
+    background-color 1.2s ease, color 1.2s ease, border-color 1.2s ease,
+    fill 1.2s ease;
+}
+
+:root.light-theme {
+  --bg-color: #f7f3eb;
+  --text-color: #131313;
+  --text-muted: rgba(19, 19, 19, 0.7);
+  --gold-color: #b69203;
+  --price-color: #b69203;
+  --border-color: rgba(19, 19, 19, 0.08);
+  --overlay-color: rgba(247, 243, 235, 0.82);
+}
+
 body {
-  background-color: #131313;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  transition: var(--theme-transition);
+}
+
+.fade-in-lang {
+  animation: langFadeIn 0.35s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes langFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

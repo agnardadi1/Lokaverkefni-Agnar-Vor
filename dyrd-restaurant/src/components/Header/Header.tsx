@@ -1,17 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import "./styles.css";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isLight, setIsLight] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleTheme = () => {
+    const newLight = !isLight;
+    setIsLight(newLight);
+
+    if (newLight) {
+      document.documentElement.classList.add("light-theme");
+    } else {
+      document.documentElement.classList.remove("light-theme");
+    }
+  };
+
   return (
-    <header className="header-container">
+    <header className={`header-container ${isScrolled ? "is-scrolled" : ""}`}>
       <div className="header-main-row">
         <Link to="/" className="header-brand" onClick={() => setIsOpen(false)}>
-          <img src="/logo.png" alt="Dýrð lógó" className="header-logo-img" />
+          <img
+            src={isLight ? "/logo-gold.png?v=1" : "/logo.png?v=1"}
+            alt="Dýrð lógó"
+            className="header-logo-img"
+          />
           <span className="header-brand-name">DÝRÐ</span>
         </Link>
 
@@ -26,8 +56,8 @@ export default function Header() {
         </button>
       </div>
 
-      <div className="header-nav-wrapper">
-        <nav className={`header-nav ${isOpen ? "nav-open" : ""}`}>
+      <div className={`header-nav-wrapper ${isOpen ? "nav-open" : ""}`}>
+        <nav className="header-nav">
           <Link to="/" onClick={() => setIsOpen(false)}>
             {t("navHome")}
           </Link>
@@ -42,20 +72,26 @@ export default function Header() {
           </Link>
         </nav>
 
-        <div className={`lang-selector ${isOpen ? "nav-open" : ""}`}>
-          <button
-            onClick={() => setLanguage("is")}
-            className={`lang-btn ${language === "is" ? "active" : ""}`}
-          >
-            IS
+        <div className="header-controls">
+          <button onClick={toggleTheme} className="theme-toggle-btn">
+            {isLight ? "🌙" : "☀️"}
           </button>
-          <span className="lang-divider">|</span>
-          <button
-            onClick={() => setLanguage("en")}
-            className={`lang-btn ${language === "en" ? "active" : ""}`}
-          >
-            EN
-          </button>
+
+          <div className="lang-selector">
+            <button
+              onClick={() => setLanguage("is")}
+              className={`lang-btn ${language === "is" ? "active" : ""}`}
+            >
+              IS
+            </button>
+            <span className="lang-divider">|</span>
+            <button
+              onClick={() => setLanguage("en")}
+              className={`lang-btn ${language === "en" ? "active" : ""}`}
+            >
+              EN
+            </button>
+          </div>
         </div>
       </div>
     </header>

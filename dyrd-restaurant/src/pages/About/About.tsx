@@ -3,7 +3,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import "./styles.css";
 
 export default function About() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
     <main className="about-page">
@@ -13,8 +13,24 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
       >
-        <p className="about-subtitle">{t("aboutSubtitle")}</p>
-        <h1 className="about-title">{t("aboutTitle")}</h1>
+        <motion.p
+          key={`about-subtitle-${language}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          className="about-subtitle"
+        >
+          {t("aboutSubtitle")}
+        </motion.p>
+        <motion.h1
+          key={`about-title-${language}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          className="about-title"
+        >
+          {t("aboutTitle")}
+        </motion.h1>
         <div className="gold-divider"></div>
       </motion.div>
 
@@ -27,9 +43,33 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="about-section-title">{t("aboutSec1Title")}</h2>
-            <p className="about-paragraph">{t("aboutSec1Para1")}</p>
-            <p className="about-paragraph">{t("aboutSec1Para2")}</p>
+            <motion.h2
+              key={`about-sec1-title-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="about-section-title"
+            >
+              {t("aboutSec1Title")}
+            </motion.h2>
+            <motion.p
+              key={`about-sec1-p1-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="about-paragraph"
+            >
+              {t("aboutSec1Para1")}
+            </motion.p>
+            <motion.p
+              key={`about-sec1-p2-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="about-paragraph"
+            >
+              {t("aboutSec1Para2")}
+            </motion.p>
           </motion.div>
 
           <motion.div
@@ -51,9 +91,33 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="about-section-title">{t("aboutSec2Title")}</h2>
-            <p className="about-paragraph">{t("aboutSec2Para1")}</p>
-            <p className="about-paragraph">{t("aboutSec2Para2")}</p>
+            <motion.h2
+              key={`about-sec2-title-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="about-section-title"
+            >
+              {t("aboutSec2Title")}
+            </motion.h2>
+            <motion.p
+              key={`about-sec2-p1-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="about-paragraph"
+            >
+              {t("aboutSec2Para1")}
+            </motion.p>
+            <motion.p
+              key={`about-sec2-p2-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="about-paragraph"
+            >
+              {t("aboutSec2Para2")}
+            </motion.p>
           </motion.div>
 
           <motion.div

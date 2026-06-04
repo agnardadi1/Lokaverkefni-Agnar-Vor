@@ -1,136 +1,153 @@
 .menu-page {
-  background-color: #0a0a0a;
-  min-height: 100vh;
-  padding: 14rem 4rem 6rem 4rem;
+  padding: 12rem 8% 10rem 8%;
+  box-sizing: border-box;
 }
 
 .menu-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.long-gold-line {
+  width: 8rem;
+  height: 0.0625rem;
+  background-color: var(--gold-color);
 }
 
 .menu-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: 3rem;
-  font-weight: 400;
-  color: #ffffff !important;
+  font-size: 3.2rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: var(--text-color);
   margin: 0;
 }
 
 .menu-container {
-  max-width: 56.25rem;
+  max-width: 52rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 6rem;
 }
 
-.menu-section-divider {
-  text-align: center;
-  margin: 6rem 0 4rem 0;
-}
-
-.long-gold-line {
-  width: 9.375rem;
-  height: 0.0625rem;
-  background-color: rgba(229, 199, 98, 0.2);
-  margin: 2rem auto;
+.menu-category-section {
+  width: 100%;
 }
 
 .category-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
-  color: #e5c762 !important;
+  font-size: 2rem;
   font-weight: 400;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 2.5rem;
-  border-bottom: 0.0625rem solid rgba(229, 199, 98, 0.2);
-  padding-bottom: 0.5rem;
+  color: var(--gold-color);
+  margin: 0 0 3rem 0;
+  border-bottom: 0.0625rem solid var(--border-color);
+  padding-bottom: 0.75rem;
 }
 
 .menu-items-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .menu-item {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .menu-item-main {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   width: 100%;
 }
 
 .item-name {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffffff !important;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-color);
   margin: 0;
-  white-space: nowrap;
+  max-width: 75%;
 }
 
 .item-dots {
   flex-grow: 1;
-  border-bottom: 0.125rem dotted rgba(255, 255, 255, 0.15) !important;
+  border-bottom: 0.0625rem dotted var(--text-color);
+  opacity: 0.15;
   margin: 0 1.5rem;
-  align-self: flex-end;
-  margin-bottom: 0.3125rem;
 }
 
 .item-price {
   font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
   font-weight: 400;
-  font-size: 1.1rem;
-  color: #e5c762 !important;
-  letter-spacing: 0.05em;
+  color: var(--price-color);
   white-space: nowrap;
+}
+
+.menu-section-divider {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
 }
 
 @media (max-width: 48rem) {
   .menu-page {
-    padding: 10rem 1.5rem 4rem 1.5rem;
+    padding: 10rem 6% 6rem 6%;
+  }
+
+  .menu-header {
+    margin-bottom: 4rem;
   }
 
   .menu-title {
     font-size: 2.2rem;
   }
 
-  .menu-container {
-    gap: 3rem;
-    padding: 0;
+  .category-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .menu-items-list {
+    gap: 2rem;
   }
 
   .menu-item-main {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: flex-start !important;
-    width: 100% !important;
-    gap: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    position: relative;
+    width: 100%;
   }
 
   .item-name {
-    white-space: normal !important;
-    font-size: 1.1rem;
-    line-height: 1.4;
-    flex: 1;
+    max-width: 100%;
+    font-size: 1.15rem;
+    padding-right: 3.5rem;
   }
 
   .item-dots {
-    display: none !important;
+    display: none;
   }
 
   .item-price {
+    font-family: "Cormorant Garamond", serif;
     font-size: 1.1rem;
-    text-align: right;
-    flex-shrink: 0;
+    font-weight: 400;
+    color: var(--price-color);
+    white-space: nowrap;
   }
 }

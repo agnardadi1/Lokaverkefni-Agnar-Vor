@@ -4,7 +4,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import "./styles.css";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
 
   return (
     <main className="home-container">
@@ -18,19 +18,58 @@ export default function Home() {
             ease: [0.25, 1, 0.5, 1],
           }}
         >
-          <p className="hero-subtitle">{t("heroSubtitle")}</p>
-          <h1 className="hero-title">
+          <motion.p
+            key={`subtitle-${language}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="hero-subtitle"
+          >
+            {t("heroSubtitle")}
+          </motion.p>
+
+          <motion.h1
+            key={`title-${language}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="hero-title"
+          >
             {t("heroTitleMain")} <br />
             <span className="hero-title-sub">{t("heroTitleSub")}</span>
-          </h1>
-          <p className="hero-description">{t("heroDescription")}</p>
+          </motion.h1>
+
+          <motion.p
+            key={`desc-${language}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="hero-description"
+          >
+            {t("heroDescription")}
+          </motion.p>
+
           <div className="hero-buttons-group">
             <Link to="/hafa-samband" className="hero-btn-filled">
-              {t("heroBookBtn")}
+              <motion.span
+                key={`btn1-${language}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              >
+                {t("heroBookBtn")}
+              </motion.span>
             </Link>
 
             <Link to="/matsedill" className="hero-btn-outline">
-              {t("heroMenuBtn")}
+              <motion.span
+                key={`btn2-${language}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              >
+                {t("heroMenuBtn")}
+              </motion.span>
             </Link>
           </div>
         </motion.div>
@@ -38,10 +77,33 @@ export default function Home() {
 
       <section className="intro-section">
         <div className="intro-content">
-          <h2 className="intro-title">{t("introTitle")}</h2>
-          <p className="intro-text">{t("introText")}</p>
+          <motion.h2
+            key={`intro-title-${language}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="intro-title"
+          >
+            {t("introTitle")}
+          </motion.h2>
+          <motion.p
+            key={`intro-text-${language}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="intro-text"
+          >
+            {t("introText")}
+          </motion.p>
           <Link to="/um-okkur" className="intro-outline-btn">
-            {t("introBtn")}
+            <motion.span
+              key={`intro-btn-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t("introBtn")}
+            </motion.span>
           </Link>
         </div>
       </section>
@@ -49,7 +111,15 @@ export default function Home() {
       <section className="experience-section">
         <div className="experience-header">
           <p className="experience-subtitle"></p>
-          <h2 className="experience-title">{t("expTitle")}</h2>
+          <motion.h2
+            key={`exp-title-${language}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="experience-title"
+          >
+            {t("expTitle")}
+          </motion.h2>
           <div className="gold-divider"></div>
         </div>
 
@@ -63,8 +133,22 @@ export default function Home() {
                 className="card-image-1"
               />
             </div>
-            <h3>{t("card1Title")}</h3>
-            <p>{t("card1Desc")}</p>
+            <motion.h3
+              key={`c1-title-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t("card1Title")}
+            </motion.h3>
+            <motion.p
+              key={`c1-desc-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t("card1Desc")}
+            </motion.p>
           </div>
 
           <div className="experience-card">
@@ -76,8 +160,22 @@ export default function Home() {
                 className="card-image-2"
               />
             </div>
-            <h3>{t("card2Title")}</h3>
-            <p>{t("card2Desc")}</p>
+            <motion.h3
+              key={`c2-title-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t("card2Title")}
+            </motion.h3>
+            <motion.p
+              key={`c2-desc-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t("card2Desc")}
+            </motion.p>
           </div>
 
           <div className="experience-card">
@@ -89,8 +187,22 @@ export default function Home() {
                 className="card-image-3"
               />
             </div>
-            <h3>{t("card3Title")}</h3>
-            <p>{t("card3Desc")}</p>
+            <motion.h3
+              key={`c3-title-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t("card3Title")}
+            </motion.h3>
+            <motion.p
+              key={`c3-desc-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              {t("card3Desc")}
+            </motion.p>
           </div>
         </div>
       </section>

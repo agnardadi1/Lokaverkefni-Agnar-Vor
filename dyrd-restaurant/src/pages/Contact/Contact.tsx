@@ -10,11 +10,132 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("Bókanir");
   const [message, setMessage] = useState("");
+  const [bookingDate, setBookingDate] = useState("");
+  const [bookingTime, setBookingTime] = useState("");
+  const [guests, setGuests] = useState("");
+  const [timeError, setTimeError] = useState("");
+
+  const todayStr = new Date().toISOString().split("T")[0];
+
+  const getDayOfWeekAbsolute = (dateStr: string) => {
+    if (!dateStr) return -1;
+    const parts = dateStr.split("-");
+    let year = parseInt(parts[0], 10);
+    let month = parseInt(parts[1], 10);
+    const day = parseInt(parts[2], 10);
+
+    if (month === 1 || month === 2) {
+      month += 12;
+      year -= 1;
+    }
+
+    const k = year % 100;
+    const j = Math.floor(year / 100);
+
+    const f =
+      day +
+      Math.floor((13 * (month + 1)) / 5) +
+      k +
+      Math.floor(k / 4) +
+      Math.floor(j / 4) +
+      5 * j;
+    const zellerDay = f % 7;
+
+    const isoDays: { [key: number]: number } = {
+      0: 6,
+      1: 0,
+      2: 1,
+      3: 2,
+      4: 3,
+      5: 4,
+      6: 5,
+    };
+
+    return isoDays[zellerDay];
+  };
+
+  const handleDateChange = (dateStr: string) => {
+    setBookingDate(dateStr);
+    setBookingTime("");
+
+    if (!dateStr) {
+      setTimeError("");
+      return;
+    }
+
+    const dayOfWeek = getDayOfWeekAbsolute(dateStr);
+
+    if (dayOfWeek === 0) {
+      setTimeError(
+        language === "en"
+          ? "Dýrð is closed on Sundays. Please select another date."
+          : "Það er lokað á sunnudögum á Dýrð. Vinsamlegast veldu annan dag.",
+      );
+    } else {
+      setTimeError("");
+    }
+  };
+
+  const getTimeOptions = () => {
+    if (!bookingDate) return [];
+
+    const dayOfWeek = getDayOfWeekAbsolute(bookingDate);
+    if (dayOfWeek === 0) return [];
+
+    const isWeekendLong = dayOfWeek === 5 || dayOfWeek === 6;
+
+    if (isWeekendLong) {
+      return [
+        "17:00",
+        "17:30",
+        "18:00",
+        "18:30",
+        "19:00",
+        "19:30",
+        "20:00",
+        "20:30",
+        "21:00",
+        "21:30",
+        "22:00",
+        "22:30",
+        "23:00",
+        "23:30",
+        "00:00",
+        "00:30",
+      ];
+    } else {
+      return [
+        "17:00",
+        "17:30",
+        "18:00",
+        "18:30",
+        "19:00",
+        "19:30",
+        "20:00",
+        "20:30",
+        "21:00",
+        "21:30",
+        "22:00",
+        "22:30",
+      ];
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!name || !email || !subject || !message) {
+    if (subject === "Bókanir") {
+      if (!bookingDate) return;
+      if (getDayOfWeekAbsolute(bookingDate) === 0) return;
+    }
+
+    if (
+      !name ||
+      !email ||
+      !subject ||
+      !message ||
+      (subject === "Bókanir" && (!bookingDate || !bookingTime))
+    ) {
       alert(
         language === "en"
           ? "Please fill out all required fields on the letter!"
@@ -36,6 +157,8 @@ export default function Contact() {
     );
   };
 
+  const currentDayOfWeek = bookingDate ? getDayOfWeekAbsolute(bookingDate) : -1;
+
   return (
     <main className="contact-page">
       <fMotion.div
@@ -44,12 +167,24 @@ export default function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
       >
-        <p className="contact-subtitle">
+        <fMotion.p
+          key={`contact-subtitle-${language}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          className="contact-subtitle"
+        >
           {language === "en" ? "Send us a message" : "Sendu okkur skilaboð"}
-        </p>
-        <h1 className="contact-title">
+        </fMotion.p>
+        <fMotion.h1
+          key={`contact-title-${language}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          className="contact-title"
+        >
           {language === "en" ? "Contact Us" : "Hafa samband"}
-        </h1>
+        </fMotion.h1>
         <div className="gold-divider"></div>
       </fMotion.div>
 
@@ -62,13 +197,25 @@ export default function Contact() {
         <div className="letter-seal">D</div>
 
         <form onSubmit={handleSubmit} className="letter-form" noValidate>
-          <p className="letter-prose">
+          <fMotion.p
+            key={`letter-salutation-${language}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="letter-prose"
+          >
             {language === "en"
               ? "Dear culinary enthusiasts at Dýrð,"
               : "Heil(ir) og sæl(ir) matgæðingar á Dýrð,"}
-          </p>
+          </fMotion.p>
 
-          <p className="letter-prose">
+          <fMotion.p
+            key={`letter-intro-${language}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="letter-prose"
+          >
             {language === "en" ? "I, " : "Ég, "}
             <input
               type="text"
@@ -101,12 +248,14 @@ export default function Contact() {
                   : "Fyrirtækjaþjónusta"}
               </option>
             </select>
-          </p>
+          </fMotion.p>
 
           {subject === "Bókanir" && (
             <fMotion.div
+              key={`fields-bookings-${language}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
               className="conditional-fields"
             >
               <p className="letter-prose">
@@ -118,6 +267,8 @@ export default function Contact() {
                   min="1"
                   max="20"
                   required
+                  value={guests}
+                  onChange={(e) => setGuests(e.target.value)}
                   placeholder={language === "en" ? "Guests" : "Fjöldi"}
                   className="letter-input number-input"
                 />{" "}
@@ -125,19 +276,44 @@ export default function Contact() {
                 <input
                   type="date"
                   required
+                  min={todayStr}
+                  value={bookingDate}
+                  onChange={(e) => handleDateChange(e.target.value)}
                   className="letter-input date-input"
                 />{" "}
                 {language === "en" ? "at " : "klukkan "}
-                <input
-                  type="time"
+                <select
                   required
-                  className="letter-input time-input"
-                />
+                  value={bookingTime}
+                  onChange={(e) => setBookingTime(e.target.value)}
+                  className="letter-select time-select"
+                >
+                  {!bookingDate && (
+                    <option value="" disabled>
+                      {language === "en" ? "Select date..." : "Veldu dag..."}
+                    </option>
+                  )}
+                  {bookingDate && currentDayOfWeek === 0 && (
+                    <option value="" disabled>
+                      {language === "en" ? "Closed" : "Lokað"}
+                    </option>
+                  )}
+                  {bookingDate && currentDayOfWeek !== 0 && (
+                    <option value="" disabled>
+                      {language === "en" ? "Time" : "Tími"}
+                    </option>
+                  )}
+                  {getTimeOptions().map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
               </p>
               <p className="letter-prose">
                 {language === "en"
                   ? "Here is my email address for confirmation and/or further correspondence: "
-                  : "Hér er netfangið mitt fyrir staðfestingu og/eða frekari samskipti: "}
+                  : "Hér er netfangið mitt fyrir staðfestingu and/eða frekari samskipti: "}
                 <input
                   type="email"
                   required
@@ -171,8 +347,10 @@ export default function Contact() {
 
           {subject === "Almenn fyrirspurn" && (
             <fMotion.div
+              key={`fields-inquiry-${language}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
               className="conditional-fields"
             >
               <p className="letter-prose">
@@ -212,8 +390,10 @@ export default function Contact() {
 
           {subject === "Fyrirtækjaþjónusta" && (
             <fMotion.div
+              key={`fields-corporate-${language}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
               className="conditional-fields"
             >
               <p className="letter-prose">
@@ -264,25 +444,77 @@ export default function Contact() {
             </fMotion.div>
           )}
 
-          <p className="letter-prose">
+          {timeError && (
+            <p
+              style={{
+                color: "#720000",
+                fontFamily: "Cormorant Garamond, serif",
+                fontSize: "1.3rem",
+                fontStyle: "italic",
+                fontWeight: 500,
+                textAlign: "center",
+                margin: "2rem 0 1rem 0",
+                letterSpacing: "0.02em",
+              }}
+            >
+              {timeError}
+            </p>
+          )}
+
+          <fMotion.p
+            key={`letter-closing-${language}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            className="letter-prose"
+          >
             {language === "en"
               ? "We look forward to hearing from you."
               : "Við hlökkum til að heyra frá ykkur."}
-          </p>
+          </fMotion.p>
 
           <div className="letter-closing-block">
-            <p className="letter-prose">
+            <fMotion.p
+              key={`letter-signoff-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="letter-prose"
+            >
               {language === "en"
                 ? "With anticipation and pleasure,"
                 : "Með tilhlökkun og ánægju,"}
-            </p>
+            </fMotion.p>
             <p className="letter-signature">{name || "____________________"}</p>
           </div>
 
           <div className="letter-footer">
-            <button type="submit" className="seal-button">
+            <fMotion.button
+              key={`letter-button-${language}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              type="submit"
+              disabled={
+                !!timeError ||
+                (subject === "Bókanir" && (!bookingDate || !bookingTime))
+              }
+              style={{
+                opacity:
+                  timeError ||
+                  (subject === "Bókanir" && (!bookingDate || !bookingTime))
+                    ? 0.3
+                    : 1,
+                cursor:
+                  timeError ||
+                  (subject === "Bókanir" && (!bookingDate || !bookingTime))
+                    ? "not-allowed"
+                    : "pointer",
+              }}
+              className="seal-button"
+            >
               {language === "en" ? "Seal Inquiry" : "Innsigla erindi"}
-            </button>
+            </fMotion.button>
           </div>
         </form>
       </fMotion.div>

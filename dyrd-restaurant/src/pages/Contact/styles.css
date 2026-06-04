@@ -1,10 +1,5 @@
 .contact-page {
-  background-color: #0a0a0a;
-  min-height: 100vh;
-  padding: 14rem 4rem 8rem 4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 12rem 8% 10rem 8%;
   box-sizing: border-box;
 }
 
@@ -15,54 +10,52 @@
 
 .contact-subtitle {
   font-family: "Cormorant Garamond", serif;
-  font-style: italic;
-  font-size: 1.4rem;
-  color: #e5c762 !important;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--gold-color);
+  margin-bottom: 0.75rem;
 }
 
 .contact-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: 3.5rem;
-  font-weight: 400;
-  color: #ffffff !important;
-  text-transform: uppercase;
+  font-size: 3.2rem;
+  font-weight: 300;
   letter-spacing: 0.05em;
-  margin: 0;
+  color: var(--text-color);
+  margin: 0 0 1.5rem 0;
+  transition: var(--theme-transition);
 }
 
 .parchment-letter {
-  background-color: #111111;
-  background-image: radial-gradient(circle at center, #161616 0%, #111111 100%);
-  width: 100%;
-  max-width: 46.875rem;
-  padding: 5rem 4rem;
-  border: 0.0625rem solid rgba(229, 199, 98, 0.15);
-  box-shadow:
-    0 1.875rem 3.75rem rgba(0, 0, 0, 0.6),
-    inset 0 0 2.5rem rgba(0, 0, 0, 0.8);
-  position: relative;
+  background-color: #fbf9f5;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 5rem 4.5rem;
   box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 1.25rem 3.125rem rgba(19, 19, 19, 0.04);
+  border: 0.0625rem solid rgba(19, 19, 19, 0.03);
 }
 
 .letter-seal {
   position: absolute;
-  top: -1.5625rem;
+  top: -1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 3.125rem;
-  height: 3.125rem;
-  background-color: #e5c762;
-  color: #0a0a0a;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--gold-color);
+  color: #fbf9f5;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  box-shadow: 0 0.25rem 0.9375rem rgba(229, 199, 98, 0.3);
+  font-size: 1.4rem;
+  font-weight: 600;
+  box-shadow: 0 0.25rem 0.625rem rgba(229, 199, 98, 0.3);
+  transition: var(--theme-transition);
 }
 
 .letter-form {
@@ -73,10 +66,9 @@
 
 .letter-prose {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
-  font-style: italic;
-  line-height: 2.2;
-  color: #e0e0e0;
+  font-size: 1.35rem;
+  line-height: 2;
+  color: #131313 !important;
   margin: 0;
 }
 
@@ -86,115 +78,76 @@
   gap: 1rem;
 }
 
-.letter-input {
+.letter-input,
+.letter-select,
+.letter-textarea {
   background: transparent;
   border: none;
-  border-bottom: 0.0625rem dotted rgba(229, 199, 98, 0.4);
+  border-bottom: 0.0625rem solid rgba(19, 19, 19, 0.15) !important;
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
-  font-style: italic;
-  color: #ffffff;
-  padding: 0 0.625rem;
-  transition: border-color 0.3s ease;
+  font-size: 1.35rem;
+  color: #131313 !important;
+  padding: 0 0.25rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: var(--theme-transition);
 }
 
-.letter-input:focus {
-  outline: none;
-  border-bottom-color: #e5c762;
+.letter-input::placeholder,
+.letter-textarea::placeholder {
+  color: rgba(19, 19, 19, 0.4) !important;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.letter-input:focus,
+.letter-select:focus,
+.letter-textarea:focus {
+  border-color: var(--gold-color) !important;
 }
 
 .name-input {
-  width: 17.5rem;
+  width: 14rem;
 }
-
-.company-input {
-  width: 16.25rem;
-}
-
 .email-input {
-  width: 18.75rem;
+  width: 18rem;
 }
-
+.company-input {
+  width: 15rem;
+}
 .number-input {
-  width: 5rem;
+  width: 4.5rem;
   text-align: center;
 }
-
-.number-input::-webkit-outer-spin-button,
-.number-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.date-input {
+  width: 10.5rem;
+}
+.time-select {
+  width: 7.5rem;
 }
 
-.number-input {
-  -moz-appearance: textfield;
-  appearance: none;
-}
-
-.date-input,
-.time-input {
-  width: 10.625rem;
-  color-scheme: dark;
+.letter-input::-webkit-calendar-picker-indicator {
+  filter: invert(0.08) contrast(1.5) !important;
   cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
 }
 
-.letter-select {
-  background: transparent;
-  border: none;
-  border-bottom: 0.0625rem dotted rgba(229, 199, 98, 0.4);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.4rem;
-  font-style: italic;
-  color: #e5c762;
-  padding: 0 0.625rem;
-  cursor: pointer;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.letter-select option {
-  background-color: #111111;
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  padding: 0.625rem;
-}
-
-.letter-select:focus {
-  border-bottom-color: #e5c762;
-}
-
-.conditional-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.letter-input::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
 }
 
 .letter-textarea {
-  background: transparent;
-  border: 0.0625rem dotted rgba(229, 199, 98, 0.3);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.3rem;
-  font-style: italic;
-  color: #ffffff;
-  padding: 1.5rem;
   width: 100%;
   resize: none;
   line-height: 1.6;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
-}
-
-.letter-textarea:focus {
-  outline: none;
-  border-color: #e5c762;
+  padding: 0.5rem 0;
 }
 
 .letter-closing-block {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  align-self: flex-end;
+  text-align: right;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -202,73 +155,95 @@
 
 .letter-signature {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-style: italic;
-  font-weight: 600;
-  color: #e5c762 !important;
-  padding-left: 1rem;
-  transition: all 0.3s ease;
-  min-height: 2.5rem;
+  color: var(--gold-color);
+  margin: 0;
+  min-height: 2rem;
+  transition: var(--theme-transition);
 }
 
 .letter-footer {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .seal-button {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #0a0a0a;
-  background-color: #e5c762;
+  background-color: #720000;
+  color: #fbf9f5;
   border: none;
-  padding: 1rem 2.5rem;
+  padding: 1.1rem 3rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   cursor: pointer;
-  transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: var(--theme-transition);
 }
 
 .seal-button:hover {
-  background-color: #ffffff;
-  transform: translateY(-0.125rem);
-  box-shadow: 0 0.625rem 1.25rem rgba(229, 199, 98, 0.15);
+  background-color: var(--gold-color);
+  color: #131313;
 }
 
 @media (max-width: 48rem) {
   .contact-page {
-    padding: 10rem 1.5rem 4rem 1.5rem;
+    padding: 10rem 6% 6rem 6%;
+  }
+
+  .contact-header {
+    margin-bottom: 3rem;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
   }
 
   .parchment-letter {
-    padding: 4rem 1.5rem;
+    padding: 3.5rem 2rem;
+  }
+
+  .letter-prose {
+    font-size: 1.15rem;
+    line-height: 1.8;
   }
 
   .letter-input,
   .letter-select,
+  .letter-textarea {
+    font-size: 1.15rem;
+    display: inline-block;
+    margin: 0.25rem 0;
+  }
+
   .name-input,
-  .company-input,
   .email-input,
+  .company-input,
+  .number-input,
   .date-input,
-  .time-input,
-  .number-input {
+  .time-select {
+    width: 100%;
+    text-align: left;
+    padding: 0.4rem 0;
+  }
+
+  .letter-textarea {
     width: 100%;
     margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding: 0;
   }
 
-  .number-input {
+  .letter-closing-block {
+    width: 100%;
     text-align: left;
-  }
-
-  .letter-footer {
-    justify-content: center;
+    align-self: flex-start;
+    margin-top: 1.5rem;
   }
 
   .seal-button {
     width: 100%;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 }
