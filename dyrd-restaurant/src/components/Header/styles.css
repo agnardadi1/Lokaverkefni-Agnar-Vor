@@ -36,6 +36,9 @@
   text-decoration: none;
   border: none !important;
   background: transparent !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .header-logo-img {
@@ -43,16 +46,30 @@
   width: auto;
   display: block;
   border: none !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .header-brand-name {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.6rem;
   font-weight: 400;
-  letter-spacing: 0.15em;
-  color: var(--text-color);
   text-transform: uppercase;
-  transition: var(--theme-transition);
+  color: var(--text-color);
+  letter-spacing: 2.5px !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+  transition: color 1.2s ease;
+  display: inline-block;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 8rem !important;
+  text-align: left !important;
 }
 
 .header-nav-wrapper {
@@ -73,7 +90,7 @@
   letter-spacing: 0.15em;
   color: var(--text-color);
   text-decoration: none;
-  transition: var(--theme-transition);
+  transition: color 1.2s ease;
 }
 
 .header-nav a:hover {
@@ -118,7 +135,7 @@
   font-size: 1rem;
   font-weight: 300;
   padding: 0;
-  transition: var(--theme-transition);
+  transition: color 1.2s ease;
 }
 
 .lang-btn:hover,
@@ -130,7 +147,7 @@
   color: var(--text-muted);
   opacity: 0.3;
   font-size: 0.9rem;
-  transition: var(--theme-transition);
+  transition: color 1.2s ease;
 }
 
 .menu-toggle-btn {
@@ -177,6 +194,7 @@
 
   .header-brand {
     border: none !important;
+    padding: 0 !important;
   }
 
   .menu-toggle-btn {
@@ -226,7 +244,7 @@
     width: 100%;
     border-bottom: 0.0625rem solid var(--border-color);
     font-size: 1.1rem;
-    transition: var(--theme-transition);
+    transition: color 1.2s ease;
   }
 
   .header-nav a:last-child {
@@ -239,7 +257,7 @@
     gap: 3rem;
     padding-top: 1.5rem;
     border-top: 0.0625rem solid var(--border-color);
-    transition: var(--theme-transition);
+    transition: border-top 1.2s ease;
   }
 
   .lang-selector {
