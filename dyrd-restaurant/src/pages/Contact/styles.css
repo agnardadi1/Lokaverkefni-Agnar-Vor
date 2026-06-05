@@ -144,6 +144,28 @@
   padding: 0.5rem 0;
 }
 
+.time-error-message {
+  color: #720000;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 500;
+  text-align: center;
+  margin: 1.5rem 0;
+  letter-spacing: 0.02em;
+}
+
+.form-error-message {
+  color: #a70000 !important;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  margin: 1.5rem 0;
+  letter-spacing: 0.02em;
+}
+
 .letter-closing-block {
   margin-top: 2rem;
   align-self: flex-end;
@@ -154,13 +176,15 @@
 }
 
 .letter-signature {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.6rem;
-  font-style: italic;
+  font-family: "MS Madi", cursive;
+  font-size: 3rem;
+  font-weight: 400;
   color: var(--gold-color);
   margin: 0;
-  min-height: 2rem;
-  transition: var(--theme-transition);
+  min-height: 3.5rem;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  transform-origin: right center;
 }
 
 .letter-footer {
@@ -238,6 +262,11 @@
     text-align: left;
     align-self: flex-start;
     margin-top: 1.5rem;
+  }
+
+  .letter-signature {
+    font-size: 2rem;
+    min-height: 2.5rem;
   }
 
   .seal-button {
