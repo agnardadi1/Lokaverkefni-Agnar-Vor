@@ -24,9 +24,10 @@ npm run dev -- --host
 
 # 4. Opna vefsíðu í vafra
 
-Eftir ræsingu birtast staðbundnar slóðir í terminalinu. Smelltu á slóðina eða opnaðu vafra og sláðu inn:
-➜ Local: http://localhost:5173/
-➜ Network: http://192.168.68.61:5173/ (Fyrir t.d. að skoða vef í síma)
+Eftir ræsingu birtast staðbundnar slóðir í terminalinu. Smelltu á slóðina sem birtist þar eða opnaðu vafra og sláðu inn:
+
+- **Local:** `http://localhost:5173/` (Til að skoða í tölvunni)
+- **Network:** Sú IP-slóð sem birtist í terminalinu hjá þér, t.d. `http://192.168.x.x:5173/` (Til að skoða vefinn í síma á sama staðarneti)
 
 # 5. Tækni og tól í verkefninu
 
