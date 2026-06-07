@@ -28,6 +28,7 @@ Eftir ræsingu birtast staðbundnar slóðir í terminalinu. Smelltu á slóðin
 
 - **Local:** `http://localhost:5173/` (Til að skoða í tölvunni)
 - **Network:** Sú IP-slóð sem birtist í terminalinu hjá þér, t.d. `http://192.168.x.x:5173/` (Til að skoða vefinn í síma á sama staðarneti)
+- Einnig er síðan hýst á https://lokaverkefni-agnar-vor.vercel.app/
 
 # 5. Tækni og tól í verkefninu
 
